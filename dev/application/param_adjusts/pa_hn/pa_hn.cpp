@@ -12,6 +12,7 @@
 #include "interface/led/led.h"
 #include "shell.h"
 #include "can_motor_controller.h"
+#include "Gimbal_LG.h"
 #include "can_motor_interface.h"
 #include "remote_interpreter.h"
 #include "hardware_conf.h"
@@ -29,7 +30,8 @@ private:
     void main() final {
         setName("Control");
         while (!shouldTerminate()) {
-            CANMotorController::set_target_angle(CANMotorCFG::YAW, 10);
+            Gimbal_LG::set_yaw_angle(10);
+            CANMotorController::set_target_angle(CANMotorCFG::YAW, Gimbal_LG::gimbal_target_angle[Gimbal_LG::Yaw]);
             sleep(TIME_MS2I(100));
         }
     }
@@ -53,7 +55,7 @@ int main() {
     can2.start(NORMALPRIO+1);
     CANMotorController::start(NORMALPRIO + 2, NORMALPRIO + 3, &can1, &can2);
     LED::led_on(1);
-    CANMotorController::set_target_angle(CANMotorCFG::YAW, 10);
+//    CANMotorController::set_target_angle(CANMotorCFG::YAW, 10);
     ControlThread.start(NORMALPRIO + 6);
 #ifndef UT_CHASSIS_SHELL_CONTROL
 

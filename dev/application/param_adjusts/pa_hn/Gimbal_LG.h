@@ -11,6 +11,12 @@
 
 class Gimbal_LG {
 public:
+    enum motor_id{
+        Yaw,
+        Pitch,
+        gimbal_motor_count
+    };
+
     /**
      * @brief init the gimbal para
      */
@@ -28,16 +34,12 @@ public:
 
     static void get_gimbal_feedback();
 
-private:
-    enum motor_id{
-        Yaw,
-        Pitch,
-        gimbal_motor_count
-    };
-
     static float gimbal_feedback_angle[gimbal_motor_count];
 
     static float gimbal_target_angle[gimbal_motor_count];
+
+private:
+
 };
 
 
