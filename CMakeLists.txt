@@ -371,6 +371,13 @@ target_link_libraries(ut_chassis ${AHRS_LIB})
 
 # Gimbal: include CANInterface, GimbalInterface, GimbalController, GimbalFeedbackThread and adjustment modules.
 
+add_executable(pa_hn
+        ${VEHICLE_COMMON_SRC}
+        dev/application/param_adjusts/pa_hn/can_motor_config.cpp
+        dev/application/param_adjusts/pa_hn/pa_hn.cpp
+        dev/interface/can_motor/can_motor_controller.cpp dev/application/param_adjusts/pa_hn/Gimbal_LG.cpp dev/application/param_adjusts/pa_hn/Gimbal_LG.h)
+target_include_directories(pa_hn PRIVATE dev/application/param_adjusts/pa_hn)
+
 set(pa_gimbal_dir dev/application/param_adjusts/pa_infantry/)
 add_executable(pa_gimbal
         ${COMMON_SRC}
