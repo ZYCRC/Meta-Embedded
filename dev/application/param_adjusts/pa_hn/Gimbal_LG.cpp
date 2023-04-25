@@ -4,6 +4,11 @@
 
 #include "Gimbal_LG.h"
 
+
+float Gimbal_LG::gimbal_feedback_angle[gimbal_motor_count] = {0};
+
+float Gimbal_LG::gimbal_target_angle[gimbal_motor_count] = {0};
+
 void Gimbal_LG::start(tprio_t thread_prio) {
     /* set the init angle both to 90 deg */
     for(int i; i < gimbal_motor_count; i ++){

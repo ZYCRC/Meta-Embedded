@@ -31,7 +31,7 @@ private:
         setName("Control");
         while (!shouldTerminate()) {
             Gimbal_LG::set_yaw_angle(10);
-            CANMotorController::set_target_angle(CANMotorCFG::YAW, Gimbal_LG::gimbal_target_angle[Gimbal_LG::Yaw]);
+//            CANMotorController::set_target_angle(CANMotorCFG::YAW, Gimbal_LG::gimbal_target_angle[Gimbal_LG::Yaw]);
             sleep(TIME_MS2I(100));
         }
     }

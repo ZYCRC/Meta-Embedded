@@ -375,7 +375,9 @@ add_executable(pa_hn
         ${VEHICLE_COMMON_SRC}
         dev/application/param_adjusts/pa_hn/can_motor_config.cpp
         dev/application/param_adjusts/pa_hn/pa_hn.cpp
-        dev/interface/can_motor/can_motor_controller.cpp dev/application/param_adjusts/pa_hn/Gimbal_LG.cpp dev/application/param_adjusts/pa_hn/Gimbal_LG.h dev/application/param_adjusts/pa_hn/Gimbal_SKD.cpp dev/application/param_adjusts/pa_hn/Gimbal_SKD.h)
+        dev/interface/can_motor/can_motor_controller.cpp
+        dev/application/param_adjusts/pa_hn/Gimbal_LG.cpp
+        dev/application/param_adjusts/pa_hn/Gimbal_SKD.cpp)
 target_include_directories(pa_hn PRIVATE dev/application/param_adjusts/pa_hn)
 
 set(pa_gimbal_dir dev/application/param_adjusts/pa_infantry/)

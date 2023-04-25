@@ -34,12 +34,10 @@ public:
 
     static void get_gimbal_feedback();
 
+private:
     static float gimbal_feedback_angle[gimbal_motor_count];
 
     static float gimbal_target_angle[gimbal_motor_count];
-
-private:
-
 };
 
 
