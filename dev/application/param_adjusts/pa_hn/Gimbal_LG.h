@@ -6,6 +6,8 @@
 #define META_EMBEDDED_GIMBAL_LG_H
 
 #include "ch.hpp"
+#include "can_motor_controller.h"
+#include "can_motor_interface.h"
 
 class Gimbal_LG {
 public:
@@ -29,9 +31,11 @@ public:
 private:
     enum motor_id{
         Yaw,
-        pitch,
+        Pitch,
         gimbal_motor_count
     };
+
+    static float gimbal_feedback_angle[gimbal_motor_count];
 
     static float gimbal_target_angle[gimbal_motor_count];
 };
