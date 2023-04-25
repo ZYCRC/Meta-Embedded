@@ -29,7 +29,7 @@ private:
     void main() final {
         setName("Control");
         while (!shouldTerminate()) {
-            CANMotorController::set_target_angle(CANMotorCFG::YAW, 1000);
+            CANMotorController::set_target_angle(CANMotorCFG::YAW, 10);
             sleep(TIME_MS2I(100));
         }
     }
@@ -53,7 +53,7 @@ int main() {
     can2.start(NORMALPRIO+1);
     CANMotorController::start(NORMALPRIO + 2, NORMALPRIO + 3, &can1, &can2);
     LED::led_on(1);
-    CANMotorController::set_target_angle(CANMotorCFG::YAW, 1000);
+    CANMotorController::set_target_angle(CANMotorCFG::YAW, 10);
     ControlThread.start(NORMALPRIO + 6);
 #ifndef UT_CHASSIS_SHELL_CONTROL
 
