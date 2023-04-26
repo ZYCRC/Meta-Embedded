@@ -8,6 +8,7 @@
 #include "ch.hpp"
 #include "can_motor_controller.h"
 #include "can_motor_interface.h"
+#include "Gimbal_SKD.h"
 
 class Gimbal_LG {
 public:
@@ -35,9 +36,7 @@ public:
     static void get_gimbal_feedback();
 
 private:
-    static float gimbal_feedback_angle[gimbal_motor_count];
 
-    static float gimbal_target_angle[gimbal_motor_count];
 };
 
 

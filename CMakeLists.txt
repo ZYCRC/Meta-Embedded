@@ -377,7 +377,8 @@ add_executable(pa_hn
         dev/application/param_adjusts/pa_hn/pa_hn.cpp
         dev/interface/can_motor/can_motor_controller.cpp
         dev/application/param_adjusts/pa_hn/Gimbal_LG.cpp
-        dev/application/param_adjusts/pa_hn/Gimbal_SKD.cpp)
+        dev/application/param_adjusts/pa_hn/Gimbal_SKD.cpp
+        dev/application/param_adjusts/pa_hn/thread_priorities.h)
 target_include_directories(pa_hn PRIVATE dev/application/param_adjusts/pa_hn)
 
 set(pa_gimbal_dir dev/application/param_adjusts/pa_infantry/)
