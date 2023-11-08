@@ -204,7 +204,7 @@ private:
         } feedbacks[SHELL_MAX_COMMAND_COUNT + 1] = {{nullptr, nullptr}};
     private:
         void main() override;
-        static constexpr unsigned FEEDBACK_INTERVAL = 20;  // [ms]
+        static constexpr unsigned FEEDBACK_INTERVAL = 10;  // [ms]
     };
 
     static FeedbackThread feedbackThread;

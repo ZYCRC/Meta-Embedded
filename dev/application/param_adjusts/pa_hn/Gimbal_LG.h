@@ -31,11 +31,55 @@ public:
 
     static void get_yaw_feedback();
 
-    static void get_pitch_feedback();
+    static float get_pitch_feedback();
 
     static void get_gimbal_feedback();
 
+    static void cal_gimbal_angle();
+
+    static void rec_gimbal_angle(float targetX, float targetY);
+
+    static void init_gun_pos();
+
+    static void set_pull_permit(int pull);
+
+    static void set_shoot(int shoot);
+
+    static int get_shoot_stats();
+
+    static int get_pull_stats();
+
+    static void pull_gun();
+
+    static void set_lift_vel(float target_vel);
+
+    static void shoot();
+
+    static int pull_flag;
+
+    static int shoot_flag;
+
+    static int pull_feedback;
+
+    static int shoot_feedback;
+
+    static int finish_shoot;
+
+    static int pull_last_cmd;
+
+    static int shoot_last_cmd;
+
+    static int gun_inpos;
+
 private:
+
+    static float vision_pos[2];
+
+    static int shoot_permit;
+
+    static int pull_permit;
+
+    static int pull_request;
 
 };
 

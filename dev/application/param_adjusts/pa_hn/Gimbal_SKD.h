@@ -26,17 +26,30 @@ public:
 
     static void set_pitch_angle(float target_pitch_angle);
 
+    static void set_lift_vel(float target_lift_vel);
+
     static void set_gimbal_angle(float target_yaw_angle, float target_pitch_angle);
 
     static void get_yaw_feedback();
 
-    static void get_pitch_feedback();
+    static float get_pitch_feedback();
+
+    static float get_lift_cycle();
 
     static void get_gimbal_feedback();
+
+    static float lift_cycle;
+
+    static float lift_init_angle;
+
 private:
     static float gimbal_feedback_angle[gimbal_motor_count];
 
     static float gimbal_target_angle[gimbal_motor_count];
+
+    static float lift_target_vel;
+
+    static float lift_last_angle;
 
     class SKDThread : public chibios_rt::BaseStaticThread<512> {
         void main() final;

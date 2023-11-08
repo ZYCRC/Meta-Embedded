@@ -13,6 +13,7 @@ public:
     enum motor_id_t {
         YAW,
         PITCH,
+        LIFT,
         MOTOR_COUNT
     };
     static CANMotorBase CANMotorProfile[MOTOR_COUNT];
